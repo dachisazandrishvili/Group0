@@ -1,22 +1,27 @@
-// setInterval(function(){
-//   const datee = new Date()
-//   console.log(datee.toString)
-// },1000)
+let seconds = 0;
+
+let minuts = 0;
+
+let hours =1;
 
 
-// let minut = 5
+const timer = setInterval(function(){
+  seconds++
+  if(seconds % 60 === 0){
+    minuts ++;
+    seconds = 0;
+  }
+  if(minuts % 60 === 0){
+    hours ++;
+    minuts = 0;
+  }
+  if(hours % 24 === 0){
+    hours = 0;
+    clearInterval(timer);
+  }
 
-// let seconds = 59
-
-// setInterval(function(){
-//   while(seconds = 0){
-//     minut --
-//     if(minut === 0){
-//       break
-//     console.log(minut, ":", seconds)
-//     }
-//   }
-// },1000)
+  console.log(seconds,minuts,hours)
 
 
 
+},1000);
